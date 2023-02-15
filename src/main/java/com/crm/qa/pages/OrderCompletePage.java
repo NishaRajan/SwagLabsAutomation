@@ -10,7 +10,7 @@ public class OrderCompletePage extends TestBase {
 	@FindBy(xpath="//h2[contains(text(),'THANK YOU')]")
 	WebElement thankyoulabel;
 	
-	@FindBy(className="pony_express12345")
+	@FindBy(className="pony_express")
 	WebElement img;
 	
 	@FindBy(id="back-to-products")

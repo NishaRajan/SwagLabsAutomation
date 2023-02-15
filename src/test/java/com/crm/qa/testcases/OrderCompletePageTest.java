@@ -34,17 +34,17 @@ public class OrderCompletePageTest extends TestBase{
 		overViewPage = checkOutPage.enterDetails();
 		orderCompletePage = overViewPage.BtnClick();
 		}
-	@Test
+	@Test(priority = 1)
 	public void thankYouMessagedisplayed() {
 		Boolean msg = orderCompletePage.messageDisplayed();
 		Assert.assertTrue(msg);
 	}
-	@Test
+	@Test(priority = 2)
 	public void ponyExpressImageDisplayed() {
 		Boolean img = orderCompletePage.imageDisplayed();
 		Assert.assertTrue(img);
 	}
-	@Test
+	@Test(priority = 3)
 	public void backHomeBtnClick() {
 		homePage = orderCompletePage.btnClick();
 	}

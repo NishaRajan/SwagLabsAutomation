@@ -1,7 +1,9 @@
 package com.crm.qa.testcases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.CartPage;
@@ -27,13 +29,18 @@ public class CartPageTest extends TestBase {
 		cartPage = homePage.addToCartClick();	
 		}
 	
+	@Test(priority = 1)
 	public void checkPresenceOfCartItem() {
 		Boolean value = cartPage.checkCart();
 		Assert.assertTrue(value);
 	}
-	
+	@Test(priority = 2)
 	public void checkOutFromCart() {
 		checkOutPage = cartPage.checkout();
+	}
+	@AfterMethod
+	public void teardown() {
+		driver.quit();
 	}
 
 }

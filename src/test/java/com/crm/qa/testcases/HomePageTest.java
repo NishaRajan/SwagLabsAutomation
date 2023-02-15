@@ -24,12 +24,12 @@ public class HomePageTest extends TestBase {
 	    loginPage = new LoginPage();
 	    homePage =loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
-	@Test
+	@Test(priority = 1)
 	public void sortByPrice() {
 		Boolean value = homePage.selectLowPrice();
 		Assert.assertTrue(value);
 	}
-	@Test
+	@Test(priority = 2)
 	public void addToCart() {
 		cartPage = homePage.addToCartClick();
 	}

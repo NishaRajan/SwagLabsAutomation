@@ -37,17 +37,17 @@ public class OverViewPageTest extends TestBase
 		testUtil = new TestUtil();
 		overViewPage = checkOutPage.enterDetails();
 		}
-	@Test
+	@Test(priority = 1)
 	public void paymentInfoDisplayed() {
 		Boolean info = overViewPage.checkPresenceOfPaymentInformation();
 		Assert.assertTrue(info);
 	}
-	@Test
+	@Test(priority = 2)
 	public void shippingInfoDisplayed() {
 		Boolean shipinfo = overViewPage.checkPresenceOfShippingInfo();
 		Assert.assertTrue(shipinfo);
 	}
-	@Test
+	@Test(priority = 3)
 	public void finishBtnClick() {
 		orderCompletePage = overViewPage.BtnClick();
 	}
